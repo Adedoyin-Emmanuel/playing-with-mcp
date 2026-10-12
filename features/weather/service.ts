@@ -27,28 +27,12 @@ class WeatherService {
     return data;
   }
 
-  static async getWeatherByQuery(query: string, units: Units = "metric") {
-    return this.request<IWeatherResponse>("/weather", { q: query, units });
-  }
-
   static async getWeatherByLongitudeAndLatitude(
     lon: number,
     lat: number,
     units: Units = "metric"
   ) {
     return this.request<IWeatherResponse>("/weather", { lon, lat, units });
-  }
-
-  static async getForecastByQuery(
-    query: string,
-    units: Units = "metric",
-    count?: number
-  ) {
-    return this.request<IForecastResponse>("/forecast", {
-      q: query,
-      units,
-      ...(count && { cnt: count }),
-    });
   }
 
   static async getForecastByLongitudeAndLatitude(
