@@ -8,3 +8,5 @@ export const MORGAN_CONFIG = IS_PRODUCTION
   : "dev";
 
 export const PORT = process.env.PORT || 2800;
+export const OPEN_WEATHER_API_BASE = "https://api.openweathermap.org";
+export const OPEN_WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY;
